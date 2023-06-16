@@ -30,4 +30,9 @@ class FirebaseAuthService{
   Future<void> signOut() async{
     await _firebaseAuth.signOut();
   }
+
+  // Get the ID token of current User
+  Future<String?> getIdToken() async{
+    return await _firebaseAuth.currentUser?.getIdToken();
+  }
 }
